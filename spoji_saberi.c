@@ -3,6 +3,21 @@
 #include <string.h>
 
 // Funkcija koja spaja dva stringa
+char* dodaj(char *s1, char *s2);
+
+// Funkcija koja sabira dva broja
+int saberi(int a, int b);
+
+// Glavna funkcija koja prolazi kroz argv i obrađuje -s i -b
+void spoji_saberi(int argc, char *argv[], char* (*dodaj_f)(char*, char*), int (*saberi_f (int,int));
+
+int main(int argc, char *argv[])
+{
+    spoji_saberi(argc, argv, dodaj, saberi);
+
+    return 0;
+}
+
 char* dodaj(char *s1, char *s2)
 {
     size_t len = strlen(s1) + strlen(s2) + 1;
@@ -14,15 +29,12 @@ char* dodaj(char *s1, char *s2)
     return rez;
 }
 
-// Funkcija koja sabira dva broja
 int saberi(int a, int b)
 {
     return a + b;
 }
 
-// Glavna funkcija koja prolazi kroz argv i obrađuje -s i -b
-void spoji_saberi(int argc, char *argv[], char* (*dodaj_f)(char*, char*),
-                  int (*saberi_f)(int,int))
+void spoji_saberi(int argc, char *argv[], char* (*dodaj_f)(char*, char*), int (*saberi_f (int,int))
 {
     char *rezString = calloc(1, sizeof(char));  // pocetni prazan string
     int suma = 0;
@@ -64,8 +76,3 @@ void spoji_saberi(int argc, char *argv[], char* (*dodaj_f)(char*, char*),
     free(rezString);
 }
 
-int main(int argc, char *argv[])
-{
-    spoji_saberi(argc, argv, dodaj, saberi);
-    return 0;
-}
