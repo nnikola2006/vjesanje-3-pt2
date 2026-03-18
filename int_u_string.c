@@ -28,7 +28,7 @@ char* formiraj(int n, ...)
     {
         broj = va_arg(pok_arg, int);
 
-        sprintf(temp, "%d", broj); // strpava broj u string temp
+        itoa(broj, temp, 10); // baza 10 (decimalni broj)
 
         rezultat = realloc(rezultat, strlen(rezultat) + strlen(temp) + 1);
         strcat(rezultat, temp);
