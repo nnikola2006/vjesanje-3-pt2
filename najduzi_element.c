@@ -31,6 +31,12 @@ int main()
         printf("%d ", pocetak[i]);
     printf("\n");
 
+    serija(niz, n, je_pozitivan, &pocetak, &duzina);
+    printf("Najduza serija pozitivnih:\n");
+    for(int i = 0; i < duzina; i++)
+        printf("%d ", pocetak[i]);
+    printf("\n");
+    
     return 0;
 }
 
