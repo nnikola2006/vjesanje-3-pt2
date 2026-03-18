@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlih.h>
 
 void serija(int *niz, int n, int (*s)(int), int **pocetak, int *duzina);
 
@@ -20,7 +21,7 @@ int main()
         return 0;
     }
     for(int i = 0; i < n; i++)
-        scanf("%d", niz[i]);
+        scanf("%d", &niz[i]);
 
     int* pocetak = NULL;
     int duzina;
@@ -36,6 +37,8 @@ int main()
     for(int i = 0; i < duzina; i++)
         printf("%d ", pocetak[i]);
     printf("\n");
+
+    free(niz);
     
     return 0;
 }
